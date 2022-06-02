@@ -1,4 +1,7 @@
 import { StyleSheet, Text, View, SafeAreaView, Platform, StatusBar } from 'react-native';
+// import { ThemeProvider } from 'styled-components/native';
+import styled from 'styled-components/native';
+import { HomeFeed } from './src/features/homeFeed/screens/homeFeedScreen';
 
 export default function App() {
   return (
