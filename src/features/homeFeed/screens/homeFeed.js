@@ -1,6 +1,7 @@
-import React from "react"
-import { View, Text, StatusBar, Platform } from "react-native"
-import styled from 'styled-components/native'
+import React from "react";
+import { View, Text, StatusBar, Platform } from "react-native";
+import styled from 'styled-components/native';
+import { Post } from "../components/post/components/post.js";
 
 const FeedScreen = styled.SafeAreaView`
     flex: 1px;
@@ -9,11 +10,19 @@ const FeedScreen = styled.SafeAreaView`
 `;
 
 const HeadSection = styled.View`
-    background-color: ${(props) => props.theme.colors.ui.secondary};
+    background-color: ${(props) => props.theme.colors.bg.tertiary};
     padding: ${(props) => props.theme.sizes[1]};
 `;
 
-console.log(StatusBar.currentHeight, Platform.OS)
+const Body = styled.View`
+    flex: 1px;
+    background-color: ${(props) => props.theme.colors.ui.secondary};
+`;
+
+const TailSection = styled.View`
+    flex: 1px;
+    flex-grow: 0.1;
+`;
 
 export const HomeFeed = () => {
     return (
@@ -21,12 +30,12 @@ export const HomeFeed = () => {
             <HeadSection>
                 <Text>SECTION 1</Text>
             </HeadSection>
-            <View>
-                <Text>Second part!</Text>
-            </View>
-            <View>
+            <Body>
+                <Post/>
+            </Body>
+            <TailSection>
                 <Text>Third part!</Text>
-            </View>
+            </TailSection>
         </FeedScreen>
     );
 };
