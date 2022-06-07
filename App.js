@@ -1,6 +1,5 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components/native';
-import styled from 'styled-components/native';
 import { HomeFeed } from './src/features/homeFeed/screens/homeFeed';
 import { theme } from './src/infraestructure/theme/index';
 import { useFonts as useOswald, Oswald_400Regular } from '@expo-google-fonts/oswald';

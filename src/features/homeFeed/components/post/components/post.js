@@ -1,20 +1,6 @@
 import React from "react";
-import { Card } from "react-native-paper";
-import styled from "styled-components/native";
-
-const PostCard = styled(Card)`
-    flex: 1px;
-    padding: ${(props) => props.theme.space[2]};
-`;
-
-const PostCover = styled(Card.Cover)`
-    padding-botton: ${(props) => props.theme.space[1]};
-`;
-
-const Title = styled.Text`
-    font-family: ${(props) => props.theme.fonts.body};
-    font-size: ${(props) => props.theme.fontSizes.title};
-`;
+import { Text } from "../../../../../components/typography/textComponent.js";
+import { PostCard, PostCover } from './post-styles.js';
 
 export const Post = ({ post={} }) => {
     const {
@@ -25,7 +11,7 @@ export const Post = ({ post={} }) => {
     return (
         <PostCard>
             <PostCover source={{ uri: cover[0] }}/>
-            <Title>{title}</Title>
+            <Text variant='title'>{title}</Text>
         </PostCard>
-    )
-}
+    );
+};
