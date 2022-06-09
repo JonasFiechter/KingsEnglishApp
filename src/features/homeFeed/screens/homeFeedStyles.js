@@ -1,21 +1,30 @@
 import styled from "styled-components/native";
 import { StatusBar, Platform } from "react-native";
+import { FlatList } from "react-native"
 
+
+export const PostList = styled(FlatList).attrs()`
+background-color: ${(props) => props.theme.colors.bg.secondary};
+`;
 
 export const FeedScreen = styled.SafeAreaView`
 flex: 1px;
-background-color: ${(props) => props.theme.colors.bg.tertiary};
+background-color: ${(props) => props.theme.colors.bg.secondary};
 padding-top: ${Platform.OS === 'android' ? StatusBar.currentHeight : 0}px;
 `;
 
 export const HeadSection = styled.View`
-background-color: ${(props) => props.theme.colors.bg.tertiary};
-padding: ${(props) => props.theme.sizes[1]};
+flex: 1;
+flex-direction: column;
+align-items: center;
+flex-grow: 0.05;
+background-color: ${(props) => props.theme.colors.bg.secondary};
+padding: ${(props) => props.theme.sizes[0]};
 `;
 
 export const Body = styled.View`
 flex: 1px;
-background-color: ${(props) => props.theme.colors.ui.secondary};
+background-color: ${(props) => props.theme.colors.bg.secondary};
 `;
 
 export const TailSection = styled.View`

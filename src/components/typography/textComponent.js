@@ -4,7 +4,7 @@ import styled from "styled-components/native";
 const defaultTextStyles = (theme) => `
   font-family: ${theme.fonts.body};
   font-weight: ${theme.fontWeights.regular};
-  color: ${theme.colors.text.primary};
+  color: ${theme.colors.text.secondary};
   flex-wrap: wrap;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -36,7 +36,7 @@ const label = (theme) => `
 const title = (theme) => `
     font-family: ${theme.fonts.heading};
     font-size: ${theme.fontSizes.title};
-    font-weight: ${theme.fontWeights.medium};
+    font-weight: ${theme.fontWeights.bold};
 `;
 
 const variants = {

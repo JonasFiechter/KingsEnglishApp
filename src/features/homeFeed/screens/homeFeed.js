@@ -2,7 +2,7 @@ import React from "react";
 import { Post } from "../components/post/components/post.js";
 import { Text } from "../../../components/typography/textComponent.js";
 import { 
-    Body, FeedScreen, HeadSection, TailSection 
+    Body, FeedScreen, HeadSection, TailSection, PostList 
 } from "./homeFeedStyles.js";
 
 
@@ -10,14 +10,15 @@ export const HomeFeed = () => {
     return (
         <FeedScreen>
             <HeadSection>
-                <Text variant="error">SECTION 1</Text>
+                <Text variant="title">KINGS ENGLISH SCHOOL</Text>
             </HeadSection>
             <Body>
-                <Post/>
+                <PostList
+                    data={[{id: 1}, {id: 2}, {id: 3}, {id: 4}]}
+                    renderItem={() => <Post/>}
+                    keyExtractor={(item) => {item.id}}
+                />
             </Body>
-            <TailSection>
-                <Text variant="error">Third part!</Text>
-            </TailSection>
         </FeedScreen>
     );
 };
