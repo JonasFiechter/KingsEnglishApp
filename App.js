@@ -7,8 +7,30 @@ import { useFonts as useOswald, Oswald_400Regular } from '@expo-google-fonts/osw
 import { useFonts as useLato, Lato_400Regular } from '@expo-google-fonts/lato';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 const Tab = createBottomTabNavigator();
+
+const TAB_ICON = {
+	Home: "md-home",
+	Dashboard: "md-bandage",
+	Admin: "md-git-merge",
+	Settings: "md-settings"
+}
+
+const createScreenOptions = ({ route }) => {
+	const iconName = TAB_ICON[route.name]
+	return {
+	  tabBarIcon: ({ size, color }) => (
+		<Ionicons 
+		  name={iconName} 
+		  size={size} 
+		  color={color}/>
+	  ),
+	  tabBarActiveTintColor: '#091267',
+	  tabBarInactiveTintColor: 'gray'
+	}
+}
 
 export default function App() {
 	const [oswaldLoaded] = useOswald({
@@ -26,11 +48,11 @@ export default function App() {
 	return (
 		<ThemeProvider theme={theme}>
 			<NavigationContainer>
-				<Tab.Navigator>
-					<Tab.Screen name="Home" component={HomeFeed} />
-					<Tab.Screen name="Dashboard" component={HomeFeed} />
-					<Tab.Screen name="Admin" component={HomeFeed} />
-					<Tab.Screen name="Settings" component={SettingsScreen} />
+				<Tab.Navigator screenOptions={createScreenOptions}>
+					<Tab.Screen name="Home" component={HomeFeed} options={{headerShown: false}}/>
+					<Tab.Screen name="Dashboard" component={HomeFeed} options={{headerShown: false}}/>
+					<Tab.Screen name="Admin" component={HomeFeed} options={{headerShown: false}}/>
+					<Tab.Screen name="Settings" component={SettingsScreen} options={{headerShown: false}}/>
 				</Tab.Navigator>
 			</NavigationContainer>
 		</ThemeProvider>
