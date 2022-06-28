@@ -10,7 +10,7 @@ export const HomeFeed = () => {
     return (
         <FeedScreen>
             <HeadSection>
-                <Text variant="title">KINGS ENGLISH SCHOOL</Text>
+                <Text variant="title">Kings English School</Text>
             </HeadSection>
             <Body>
                 <PostList
