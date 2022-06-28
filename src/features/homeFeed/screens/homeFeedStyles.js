@@ -7,10 +7,9 @@ export const PostList = styled(FlatList).attrs()`
 background-color: ${(props) => props.theme.colors.bg.primary};
 `;
 
-export const FeedScreen = styled.SafeAreaView`
+export const FeedScreen = styled.View`
 flex: 1px;
 background-color: ${(props) => props.theme.colors.bg.primary};
-padding-top: ${Platform.OS === 'android' ? StatusBar.currentHeight : 0}px;
 `;
 
 export const HeadSection = styled.View`

@@ -2,19 +2,23 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components/native';
 import { HomeFeed } from './src/features/homeFeed/screens/homeFeed';
 import { SettingsScreen } from './src/features/settings/screens/SettingsScreen';
+import { ScheduleScreen } from './src/features/schedule/screens/ScheduleScreen';
+import { DashboardScreen } from './src/features/dashboard/screens/dashboardScreen';
 import { theme } from './src/infraestructure/theme/index';
 import { useFonts as useOswald, Oswald_400Regular } from '@expo-google-fonts/oswald';
 import { useFonts as useLato, Lato_400Regular } from '@expo-google-fonts/lato';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { AdminScreen } from './src/features/admin/screens/adminScreen';
 
 const Tab = createBottomTabNavigator();
 
 const TAB_ICON = {
 	Home: "md-home",
-	Dashboard: "md-bandage",
-	Admin: "md-git-merge",
+	Dashboard: "md-school-sharp",
+	Admin: "enter-outline",
+	Schedule: "calendar-sharp",
 	Settings: "md-settings"
 }
 
@@ -50,9 +54,10 @@ export default function App() {
 			<NavigationContainer>
 				<Tab.Navigator screenOptions={createScreenOptions}>
 					<Tab.Screen name="Home" component={HomeFeed} options={{headerShown: false}}/>
-					<Tab.Screen name="Dashboard" component={HomeFeed} options={{headerShown: false}}/>
-					<Tab.Screen name="Admin" component={HomeFeed} options={{headerShown: false}}/>
-					<Tab.Screen name="Settings" component={SettingsScreen} options={{headerShown: false}}/>
+					<Tab.Screen name="Dashboard" component={DashboardScreen}/>
+					<Tab.Screen name="Schedule" component={ScheduleScreen}/>
+					<Tab.Screen name="Admin" component={AdminScreen}/>
+					<Tab.Screen name="Settings" component={SettingsScreen}/>
 				</Tab.Navigator>
 			</NavigationContainer>
 		</ThemeProvider>
