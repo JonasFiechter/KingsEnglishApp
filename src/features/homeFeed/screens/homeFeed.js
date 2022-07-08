@@ -12,7 +12,7 @@ export const HomeFeed = () => {
         <SafeArea>
             <FeedScreen>
                 <HeadSection>
-                    <Text variant="title">Kings English School</Text>
+                    <Text variant="error">Kings English School</Text>
                 </HeadSection>
                 <Body>
                     <PostList

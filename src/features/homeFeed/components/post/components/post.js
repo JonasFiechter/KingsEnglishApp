@@ -22,10 +22,6 @@ export const Post = ({ post={} }) => {
             </PostDescription>
             <PostFooter>
                 <Text variant='caption'>{author}</Text>
-                <Ionicons 
-                    name={'md-home'} 
-                    size={2} 
-                    color={'gray'}/>
             </PostFooter>
         </PostCard>
     );

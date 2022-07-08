@@ -31,8 +31,8 @@ const createScreenOptions = ({ route }) => {
 		  size={size} 
 		  color={color}/>
 	  ),
-	  tabBarActiveTintColor: '#091267',
-	  tabBarInactiveTintColor: 'gray'
+	  tabBarActiveTintColor: 'red',
+	  tabBarInactiveTintColor: '#091267'
 	}
 }
 

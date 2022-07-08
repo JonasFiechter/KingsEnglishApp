@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { StatusBar, Platform } from "react-native";
+import { Text } from "react-native";
 import { FlatList } from "react-native"
 
 
@@ -18,7 +18,7 @@ flex-direction: column;
 align-items: center;
 flex-grow: 0.05;
 background-color: ${(props) => props.theme.colors.bg.primary};
-padding: ${(props) => props.theme.sizes[0]};
+padding-top: ${(props) => props.theme.sizes[0]};
 `;
 
 export const Body = styled.View`
