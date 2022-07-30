@@ -11,6 +11,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { AdminScreen } from './src/features/admin/screens/adminScreen';
+import { test } from './src/services/homeFeedApi/homeFeed.service';
+
+test()
 
 const Tab = createBottomTabNavigator();
 
