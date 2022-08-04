@@ -1,6 +1,7 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components/native';
 import { useState } from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
 import { LoginScreen } from './src/features/login/screens/loginScreen';
 import { HomeFeed } from './src/features/homeFeed/screens/homeFeed';
 import { SettingsScreen } from './src/features/settings/screens/SettingsScreen';
@@ -13,8 +14,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { AdminScreen } from './src/features/admin/screens/adminScreen';
+import 'react-native-gesture-handler';
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 const TAB_ICON = {
 	Home: "md-home",
@@ -46,6 +49,20 @@ function LoginStackScreen() {
 	);
   }
 
+function KingsApp() {
+	return (
+		<NavigationContainer>
+			<Tab.Navigator screenOptions={createScreenOptions}>
+				<Tab.Screen name="Home" component={HomeFeed} options={{headerShown: false}}/>
+				<Tab.Screen name="Dashboard" component={DashboardScreen}/>
+				<Tab.Screen name="Schedule" component={ScheduleScreen}/>
+				<Tab.Screen name="Admin" component={AdminScreen}/>
+				<Tab.Screen name="Settings" component={SettingsScreen}/>
+			</Tab.Navigator>
+		</NavigationContainer>
+		)
+}
+
 export default function App() {
 	const [oswaldLoaded] = useOswald({
 		Oswald_400Regular,
@@ -61,17 +78,13 @@ export default function App() {
 		
 	return (
 		<ThemeProvider theme={theme}>
-			<LoginScreen/>
+			<NavigationContainer>
+				<Stack.Navigator>
+					<Stack.Screen name="Login" component={LoginScreen} />
+					<Stack.Screen name="KingsApp" component={KingsApp} />
+				</Stack.Navigator>
+			</NavigationContainer>
 		</ThemeProvider>
 	)
 };
 
-{/* <NavigationContainer>
-				<Tab.Navigator screenOptions={createScreenOptions}>
-					<Tab.Screen name="Home" component={HomeFeed} options={{headerShown: false}}/>
-					<Tab.Screen name="Dashboard" component={DashboardScreen}/>
-					<Tab.Screen name="Schedule" component={ScheduleScreen}/>
-					<Tab.Screen name="Admin" component={AdminScreen}/>
-					<Tab.Screen name="Settings" component={SettingsScreen}/>
-				</Tab.Navigator>
-			</NavigationContainer> */}
