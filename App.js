@@ -1,5 +1,7 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components/native';
+import { useState } from 'react';
+import { LoginScreen } from './src/features/login/screens/loginScreen';
 import { HomeFeed } from './src/features/homeFeed/screens/homeFeed';
 import { SettingsScreen } from './src/features/settings/screens/SettingsScreen';
 import { ScheduleScreen } from './src/features/schedule/screens/ScheduleScreen';
@@ -11,9 +13,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { AdminScreen } from './src/features/admin/screens/adminScreen';
-import { connection } from './src/services/homeFeedApi/homeFeed.service';
-
-console.log('connection()')
 
 const Tab = createBottomTabNavigator();
 
@@ -39,6 +38,14 @@ const createScreenOptions = ({ route }) => {
 	}
 }
 
+function LoginStackScreen() {
+	return (
+	  <LoginStack.Navigator initialRouteName={"Initial"}>
+		<LoginStack.Screen name="Initial" component={Initial} options={{ headerShown: false }} />
+	  </LoginStack.Navigator>
+	);
+  }
+
 export default function App() {
 	const [oswaldLoaded] = useOswald({
 		Oswald_400Regular,
@@ -54,7 +61,12 @@ export default function App() {
 		
 	return (
 		<ThemeProvider theme={theme}>
-			<NavigationContainer>
+			<LoginScreen/>
+		</ThemeProvider>
+	)
+};
+
+{/* <NavigationContainer>
 				<Tab.Navigator screenOptions={createScreenOptions}>
 					<Tab.Screen name="Home" component={HomeFeed} options={{headerShown: false}}/>
 					<Tab.Screen name="Dashboard" component={DashboardScreen}/>
@@ -62,7 +74,4 @@ export default function App() {
 					<Tab.Screen name="Admin" component={AdminScreen}/>
 					<Tab.Screen name="Settings" component={SettingsScreen}/>
 				</Tab.Navigator>
-			</NavigationContainer>
-		</ThemeProvider>
-	)
-};
+			</NavigationContainer> */}
