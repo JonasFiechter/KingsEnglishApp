@@ -44,14 +44,14 @@ const createScreenOptions = ({ route }) => {
 function LoginStackScreen() {
 	return (
 	  <LoginStack.Navigator initialRouteName={"Initial"}>
-		<LoginStack.Screen name="Initial" component={Initial} options={{ headerShown: false }} />
+		<LoginStack.Screen name="Initial" component={Initial} />
 	  </LoginStack.Navigator>
 	);
   }
 
 function KingsApp() {
 	return (
-		<NavigationContainer>
+		<NavigationContainer independent={true}>
 			<Tab.Navigator screenOptions={createScreenOptions}>
 				<Tab.Screen name="Home" component={HomeFeed} options={{headerShown: false}}/>
 				<Tab.Screen name="Dashboard" component={DashboardScreen}/>
@@ -78,10 +78,10 @@ export default function App() {
 		
 	return (
 		<ThemeProvider theme={theme}>
-			<NavigationContainer>
+			<NavigationContainer >
 				<Stack.Navigator>
-					<Stack.Screen name="Login" component={LoginScreen} />
-					<Stack.Screen name="KingsApp" component={KingsApp} />
+					<Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
+					<Stack.Screen name="KingsApp" component={KingsApp} options={{ headerShown: false }}/>
 				</Stack.Navigator>
 			</NavigationContainer>
 		</ThemeProvider>
