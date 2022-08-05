@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Text } from "../../../components/typography/textComponent";
 import { SafeArea } from "../../../components/safeArea/SafeArea";
 import { MyButton } from "./loginScreenStyles";
@@ -7,17 +7,17 @@ import { useNavigation } from "@react-navigation/native"
 
 
 function GoToKingsButton() {
-    const navigation = useNavigation();
+  const navigation = useNavigation();
   
-    return (
-      <Button
-        title="Enter"
-        onPress={() => {
-          navigation.navigate('KingsApp');
-        }}
-      />
-    );
-  }
+  return (
+    <Button
+      title="Enter"
+      onPress={() => {
+        navigation.navigate('KingsApp');
+      }}
+    />
+  );
+}
 
 export const LoginScreen = () => {
     return (

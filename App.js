@@ -15,6 +15,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { AdminScreen } from './src/features/admin/screens/adminScreen';
 import 'react-native-gesture-handler';
+import AuthProvider from './src/contexts/auth';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -43,9 +44,10 @@ const createScreenOptions = ({ route }) => {
 
 function LoginStackScreen() {
 	return (
-	  <LoginStack.Navigator initialRouteName={"Initial"}>
-		<LoginStack.Screen name="Initial" component={Initial} />
-	  </LoginStack.Navigator>
+		<Stack.Navigator>
+					<Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
+					<Stack.Screen name="KingsApp" component={KingsApp} options={{ headerShown: false }}/>
+		</Stack.Navigator>
 	);
   }
 
@@ -78,12 +80,11 @@ export default function App() {
 		
 	return (
 		<ThemeProvider theme={theme}>
-			<NavigationContainer >
-				<Stack.Navigator>
-					<Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
-					<Stack.Screen name="KingsApp" component={KingsApp} options={{ headerShown: false }}/>
-				</Stack.Navigator>
-			</NavigationContainer>
+			<AuthProvider>
+				<NavigationContainer>
+					<LoginStackScreen/>
+				</NavigationContainer>
+			</AuthProvider>
 		</ThemeProvider>
 	)
 };
