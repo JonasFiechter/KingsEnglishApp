@@ -45,8 +45,8 @@ const createScreenOptions = ({ route }) => {
 function LoginStackScreen() {
 	return (
 		<Stack.Navigator>
-					<Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
-					<Stack.Screen name="KingsApp" component={KingsApp} options={{ headerShown: false }}/>
+			<Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
+			<Stack.Screen name="KingsApp" component={KingsApp} options={{ headerShown: false }}/>
 		</Stack.Navigator>
 	);
   }
