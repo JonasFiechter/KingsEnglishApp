@@ -44,15 +44,18 @@ const createScreenOptions = ({ route }) => {
 
 function LoginStackScreen() {
 	return (
+		// This stack is the main one, still need to make work the logout button. Read the docs
+		// For now use the header of the stack 'back' button to come back to the login page
 		<Stack.Navigator>
 			<Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
-			<Stack.Screen name="KingsApp" component={KingsApp} options={{ headerShown: false }}/>
+			<Stack.Screen name="KingsApp" component={KingsApp} options={{}}/>
 		</Stack.Navigator>
 	);
   }
 
 function KingsApp() {
 	return (
+		// Only worked inside the stack navigator with the independent param = true
 		<NavigationContainer independent={true}>
 			<Tab.Navigator screenOptions={createScreenOptions}>
 				<Tab.Screen name="Home" component={HomeFeed} options={{headerShown: false}}/>

@@ -1,14 +1,23 @@
 import styled from "styled-components/native";
-import { Button } from "react-native";
+import { TextInput } from "react-native";
 
-function myButtonFuntion(props) {
-    return (
-        <Button
-        title="Press me"
-        onPress={() => console.log('Simple Button pressed')}
-    />)
-}
-
-export const MyButton = styled(myButtonFuntion)`
+export const View = styled.View`
     flex: 1;
+    align-items: center;
+    justify-items: center;
+`;
+
+export const FormContainer = styled.View`
+    flex-grow: 1;
+    background-color: red;
+`;
+
+export const UserEmail = styled(TextInput).attrs()`
+    margin: 5px;
+    background-color: gray;
+`;
+
+export const UserPassword = styled(TextInput).attrs()`
+    margin: 5px;
+    background-color: gray;
 `;
