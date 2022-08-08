@@ -37,6 +37,7 @@ const title = (theme) => `
     font-family: ${theme.fonts.heading};
     font-size: ${theme.fontSizes.title};
     font-weight: ${theme.fontWeights.bold};
+    color: white;
 `;
 
 const variants = {
