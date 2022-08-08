@@ -3,7 +3,7 @@ import { TextInput } from "react-native";
 
 export const View = styled.View`
     flex: 1;
-    background-color: darkgreen;
+    background-color: #101044;
 `;
 
 export const FormContainer = styled.View`

@@ -4,22 +4,20 @@ import { useNavigation } from "@react-navigation/native";
 import { Button } from "react-native";
 import { View } from "react-native";
 
-function LogOutButton({title}) {
-    const navigation = useNavigation();
-
+function LogOutButton({ navigation=useNavigation }) {
     return (
-        <Button title={title} onPress={() => {
-            navigation.navigate('Login');
-            }
-        }/>
+        <Button 
+            title="Logout"
+            onPress={() => { navigation.navigate('Login')} }
+        />
     )
 }
 
-export const DashboardScreen = () => {
+export const DashboardScreen = ({ navigation }) => {
     return (
         <View>
             <Text variant="error">Dashboard Screen WORKING!!!</Text>
-            <LogOutButton title={'TitleTest'}/>
+            <LogOutButton navigation={navigation}/>
         </View>
     );
 };

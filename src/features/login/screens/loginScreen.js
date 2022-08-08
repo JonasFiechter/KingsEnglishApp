@@ -11,9 +11,7 @@ function GoToKingsButton() {
   return (
     <Button
       title="Enter"
-      onPress={() => {
-        navigation.navigate('KingsApp');
-      }}
+      onPress={() => { navigation.navigate('KingsApp') }}
     />
   );
 }
