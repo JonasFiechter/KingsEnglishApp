@@ -1,8 +1,9 @@
 import styled from "styled-components/native";
 import { Button } from "react-native-paper";
+import { colors } from "../../../infraestructure/theme/colors";
 
 export const AuthButton = styled(Button).attrs({
-    color: '#103164'
+    color: colors.brand.primary
 })`
     margin-bottom: 5px;
 `;

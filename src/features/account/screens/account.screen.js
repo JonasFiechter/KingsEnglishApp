@@ -1,7 +1,7 @@
 import React from "react";
-import { KingsLogo, Background, ButtonsContainer, AuthButton, RegisterButton, VersionLabel } from "./account.style";
+import { KingsLogo, Background, ButtonsContainer, AuthButton, VersionLabel } from "./account.styles";
 
-export function AccountScreen() {
+export function AccountScreen({ navigation }) {
     return (
         <Background>
             <KingsLogo></KingsLogo>
@@ -9,15 +9,15 @@ export function AccountScreen() {
                 <AuthButton 
                     icon='sword' 
                     mode='contained'
-                    onPress={() => {console.log('Pressed Login')}}
+                    onPress={() => {navigation.navigate('Login')}}
                 >LogIn</AuthButton>
-                <AuthButton 
+                <AuthButton
                     icon='shield' 
                     mode='contained'
-                    onPress={() => {console.log('Pressed Register')}}
+                    onPress={() => {navigation.navigate('Register')}}
                 >Register</AuthButton>
             </ButtonsContainer>
-            <VersionLabel>pre-alpha 0.032.2022</VersionLabel>
+            <VersionLabel>pre_alpha_0.032.2022</VersionLabel>
         </Background>
     )
-}
+};

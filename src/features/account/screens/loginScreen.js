@@ -1,30 +1,33 @@
 import React from "react";
-import { SafeArea } from "../../../components/safeArea/SafeArea";
 import { 
   FormContainer, 
   ButtonsContainer, 
-  UserInput, 
-  View, 
-  LogInButton, 
-  SignUpButton,
-  KingsTitle
+  UserInput,
+  LogInButton,
+  Background,
+  KingsLogo, 
 } from "./loginScreenStyles";
 
-
-export const LoginScreen = () => {
+export const LoginScreen = ({ navigation }) => {
     return (
-      <View>
-        <SafeArea>
-            <FormContainer>
-              <KingsTitle></KingsTitle>
-              <UserInput placeholder="Your email"/>
-              <UserInput placeholder="Your password"/>
-              <ButtonsContainer>
-                <LogInButton/>
-                <SignUpButton/>
-              </ButtonsContainer>
-            </FormContainer>
-        </SafeArea>
-      </View>
+      <Background>
+        <KingsLogo></KingsLogo>
+        <FormContainer>
+          <UserInput label='Email'/>
+          <UserInput label='Password'/>
+          <ButtonsContainer>
+            <LogInButton 
+                icon='crown' 
+                mode='contained'
+                onPress={() => {navigation.navigate('KingsApp')}}
+            >Login</LogInButton>
+            <LogInButton 
+                icon='arrow-left-bold' 
+                mode='contained'
+                onPress={() => {navigation.navigate('Main')}}
+            >Go Back</LogInButton>
+          </ButtonsContainer>
+        </FormContainer>
+      </Background>
     );
 };

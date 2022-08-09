@@ -1,59 +1,44 @@
 import styled from "styled-components/native";
-import { TextInput } from "react-native";
-import { Button} from "react-native";
-import { Text } from "../../../components/typography/textComponent";
-import { useNavigation } from "@react-navigation/native"
+import { TextInput } from "react-native-paper";
+import { Button } from "react-native-paper";
+import { colors } from "../../../infraestructure/theme/colors";
 
-export function LogInButton() {
-    const navigation = useNavigation();
-    
-    return (
-      <Button
-        title="Login"
-        onPress={() => { navigation.navigate('Navigation') }}
-      />
-    );
-  }
-  
-export function SignUpButton() {
-    const navigation = useNavigation();
-    
-    return (
-      <Button
-        title="SignUp"
-        onPress={() => { navigation.navigate('KingsApp') }}
-      />
-    );
-  }
+export const LogInButton = styled(Button).attrs({
+  color: colors.brand.primary
+})`
+    width: 60%;
+    margin-bottom: 5px;
+`;
 
-export function KingsTitle() {
-    return (
-        <Text variant='title'>Welcome to KingsEnglishApp</Text>
-    )
-}
-
-export const View = styled.View`
+export const Background = styled.View`
     flex: 1;
-    background-color: #101044;
+    align-items: center;
+    justifyContent: center;
     flex-direction: column;
 `;
 
+export const KingsLogo = styled.Image.attrs({
+    source: require('../../../../assets/logo_kings_001.png'),
+})` 
+    top: 20px;
+    margin: 60px;
+    flex: 1;
+    resize-mode: contain;
+`;
+
 export const FormContainer = styled.View`
-    display: flex;
-    align-items: center;
-    top: 40%;
+    flex-grow: 0.3;
+    width: 90%;
 `;
 
 export const UserInput = styled(TextInput).attrs()`
-    width: 70%;
-    margin: 5px;
-    background-color: white;
+    margin-bottom: 5px;
 `;
 
 export const ButtonsContainer = styled.View`
     display: flex;
-    flex-direction: row;
+    padding-top: 20px;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 `;
-
