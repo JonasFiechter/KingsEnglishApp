@@ -1,13 +1,15 @@
+//  Here we store some variables and the config that we will need to make the API run.
+
 import {initializeApp} from 'firebase/app';
 import { getAuth, GoogleAuthProvider } from 'firebase/auth';
 
 export const firebaseConfig = {
-	apiKey: "AIzaSyBmKwzXIQ_7iufDh4U6GyU_4Wc-hyDEnf8",
-	authDomain: "mealstogo-b2612.firebaseapp.com",
-	projectId: "mealstogo-b2612",
-	storageBucket: "mealstogo-b2612.appspot.com",
-	messagingSenderId: "158582890553",
-	appId: "1:158582890553:web:2ef50439fcd80f2ede2de8",
+	apiKey: "AIzaSyB79F1ZoHzBrEw4t2IEVC_DQjh5AhitlUE",
+	authDomain: "kingsenglishapp.firebaseapp.com",
+	projectId: "kingsenglishapp",
+	storageBucket: "kingsenglishapp.appspot.com",
+	messagingSenderId: "464719863448",
+	appId: "1:464719863448:web:955661b1fe2c889b747aed"
 	};
 
 export const app = initializeApp(firebaseConfig);

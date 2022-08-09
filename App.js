@@ -9,7 +9,8 @@ import { useFonts as useLato, Lato_400Regular } from '@expo-google-fonts/lato';
 import { NavigationContainer } from '@react-navigation/native';
 import 'react-native-gesture-handler';
 import { AuthenticationContextProvider } from "./src/services/authentication/authentication.context";
-import { KingsApp } from './src/infraestructure/navigation/app.navigator'
+import { KingsAppNavigator } from './src/infraestructure/navigation/app.navigator'
+import { Navigation } from './src/infraestructure/navigation/index';
 
 const Stack = createNativeStackNavigator();
 
@@ -29,12 +30,14 @@ export default function App() {
 		
 	return (
 		<ThemeProvider theme={theme}>
+			<AuthenticationContextProvider>
 				<NavigationContainer>
 					<Stack.Navigator>
 						<Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
-						<Stack.Screen name="KingsApp" component={KingsApp} options={{ headerShown: false }}/>
+						<Stack.Screen name="Navigation" component={Navigation} options={{ headerShown: false }}/>
 					</Stack.Navigator>
 				</NavigationContainer>
+			</AuthenticationContextProvider>
 		</ThemeProvider>
 	)
 };

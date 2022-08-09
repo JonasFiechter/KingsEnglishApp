@@ -10,7 +10,7 @@ export function LogInButton() {
     return (
       <Button
         title="Login"
-        onPress={() => { navigation.navigate('KingsApp') }}
+        onPress={() => { navigation.navigate('Navigation') }}
       />
     );
   }

@@ -33,13 +33,13 @@ const createScreenOptions = ({ route }) => {
 	}
 }
 
-export function KingsApp({ navigation }) {
+export function KingsAppNavigator({ navigation }) {
     return (
 		// Only worked inside the stack navigator with the independent param = true
 		<NavigationContainer independent={true}>
 			<Tab.Navigator screenOptions={createScreenOptions}>
 				<Tab.Screen name="Home" component={HomeFeed} options={{headerShown: false}}/>
-				<Tab.Screen name="Dashboard" component={DashboardScreen} navigation={navigation}/>
+				<Tab.Screen sname="Dashboard" component={DashboardScreen} navigation={navigation}/>
 				<Tab.Screen name="Schedule" component={ScheduleScreen}/>
 				<Tab.Screen name="Admin" component={AdminScreen}/>
 				<Tab.Screen name="Settings" component={SettingsScreen}/>
