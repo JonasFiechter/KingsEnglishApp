@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Text } from "../../../components/typography/textComponent";
 import { SafeArea } from "../../../components/safeArea/SafeArea";
 import { 
   FormContainer, 
