@@ -25,7 +25,7 @@ export const LoginScreen = ({ navigation }) => {
           <LogInButton 
               icon='crown' 
               mode='contained'
-              onPress={signIn}
+              onPress={() => {navigation.navigate('KingsApp')}}
           >Login</LogInButton>
           <LogInButton 
               icon='arrow-left-bold' 

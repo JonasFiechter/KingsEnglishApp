@@ -10,7 +10,7 @@ export function Navigation() {
     return (
     // Only worked inside the stack navigator with the independent param = true
     <NavigationContainer>
-        { isAuthenticated ? <KingsAppNavigator></KingsAppNavigator> : (
+        { isAuthenticated ? <KingsAppNavigator independent={true}></KingsAppNavigator> : (
             <AccountNavigator></AccountNavigator>
             )
         }
