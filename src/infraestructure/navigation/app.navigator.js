@@ -7,6 +7,7 @@ import { DashboardScreen } from '../../features/dashboard/screens/dashboardScree
 import { ScheduleScreen } from '../../features/schedule/screens/ScheduleScreen';
 import { AdminScreen } from '../../features/admin/screens/adminScreen';
 import { SettingsScreen } from '../../features/settings/screens/SettingsScreen';
+import { NavigationContainer } from "@react-navigation/native";
 
 const TAB_ICON = {
 	Home: "md-home",
@@ -34,12 +35,14 @@ const createScreenOptions = ({ route }) => {
 
 export function KingsAppNavigator({ navigation }) {
     return (
-		<Tab.Navigator screenOptions={createScreenOptions}>
-			<Tab.Screen name="Home" component={HomeFeed} options={{headerShown: false}}/>
-			<Tab.Screen sname="Dashboard" component={DashboardScreen} navigation={navigation}/>
-			<Tab.Screen name="Schedule" component={ScheduleScreen}/>
-			<Tab.Screen name="Admin" component={AdminScreen}/>
-			<Tab.Screen name="Settings" component={SettingsScreen}/>
-		</Tab.Navigator>
+		<NavigationContainer independent={true}>
+			<Tab.Navigator screenOptions={createScreenOptions}>
+				<Tab.Screen name="Home" component={HomeFeed} options={{headerShown: false}}/>
+				<Tab.Screen name="Dashboard" component={DashboardScreen} navigation={navigation}/>
+				<Tab.Screen name="Schedule" component={ScheduleScreen}/>
+				<Tab.Screen name="Admin" component={AdminScreen}/>
+				<Tab.Screen name="Settings" component={SettingsScreen}/>
+			</Tab.Navigator>
+		</NavigationContainer>
 		)
 }

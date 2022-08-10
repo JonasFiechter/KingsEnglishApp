@@ -51,6 +51,11 @@ export const LoginScreen = ({ navigation }) => {
               mode='contained'
               onPress={() => {navigation.navigate('Main')}}
           >Go Back</LogInButton>
+          <LogInButton 
+              icon='arrow-right-bold' 
+              mode='contained'
+              onPress={() => {navigation.navigate('TempKings')}}
+          >TempKings</LogInButton>
         </ButtonsContainer>
         {error && (
           <Text variant='error'>{error}</Text>
