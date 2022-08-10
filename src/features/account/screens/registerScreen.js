@@ -19,8 +19,20 @@ export function RegisterScreen({ navigation }) {
       <Background>
       <KingsLogo></KingsLogo>
       <FormContainer>
-      <UserInput label='Email' value={email} onChangeText={text=> setEmail(text)}/>
-      <UserInput label='Password' value={password} secureTextEntry={true} onChangeText={text=> setpassword(text)}/>
+      <UserInput 
+        label='Email' 
+        value={email} 
+        textContentType='emailAddress'
+        keyboardType='email-address'
+        autoCapitalize='none'
+        onChangeText={text=> setEmail(text)}
+      />
+      <UserInput 
+        label='Password' 
+        value={password} 
+        secureTextEntry={true} 
+        onChangeText={text=> setpassword(text)}
+      />
       <UserInput label='Password confirmation' value={password2} secureTextEntry={true} onChangeText={text=> setpassword2(text)}/>
         <ButtonsContainer>
           <LogInButton 

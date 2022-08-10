@@ -8,9 +8,8 @@ export function Navigation() {
     const { isAuthenticated } = useContext(AuthenticationContext)
 
     return (
-    // Only worked inside the stack navigator with the independent param = true
     <NavigationContainer>
-        { isAuthenticated ? <KingsAppNavigator independent={true}></KingsAppNavigator> : (
+        { isAuthenticated ? <KingsAppNavigator></KingsAppNavigator> : (
             <AccountNavigator></AccountNavigator>
             )
         }

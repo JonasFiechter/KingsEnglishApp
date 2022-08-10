@@ -1,10 +1,12 @@
 // Here we are going to input the API that will talk to the firebase
 // It needs to be exported and as the version of firebase is 9 it is not ready yet.
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth"
+import { useContext } from "react"
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth"
 import { authentication } from "./firebase.config"
 
-export function signIn() {
-  console.log('Signing in')
+export function logInRequest(email, password) {
+  console.log('Signing in...')
+  signInWithEmailAndPassword(authentication, email, password)
 }
 
 export function register(credentials) {
