@@ -5,6 +5,7 @@ import { Button } from "react-native";
 import { View } from "react-native";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
 
+//  Need to integrate an confirmation message before log out!
 
 function LogOutButton() {
     const {setIsAuthenticated} = useContext(AuthenticationContext)

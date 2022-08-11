@@ -22,6 +22,10 @@ const error = (theme) => `
     color: ${theme.colors.text.error};
 `;
 
+const success = (theme) => `
+    color: ${theme.colors.text.success};
+`;
+
 const caption = (theme) => `
     font-size: ${theme.fontSizes.caption};
     font-weight: ${theme.fontWeights.bold};
@@ -47,6 +51,7 @@ const variants = {
     caption,
     error,
     hint,
+    success
 };
 
 export const Text = styled.Text`

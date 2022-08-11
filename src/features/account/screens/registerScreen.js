@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { Alert } from "react-native";
 import { Text } from "../../../components/typography/textComponent";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
 import { // This imports are the same from login screen so there is no need to create a style file
@@ -17,43 +18,48 @@ export function RegisterScreen({ navigation }) {
   const [password2, setpassword2] = useState('');
   const { register, comunicate } = useContext(AuthenticationContext)
   console.log(comunicate)
+
   return (
-      <Background>
+    <Background>
       <KingsLogo></KingsLogo>
       <FormContainer>
-      <UserInput 
-        label='Email' 
-        value={email} 
-        textContentType='emailAddress'
-        keyboardType='email-address'
-        autoCapitalize='none'
-        onChangeText={text=> setEmail(text)}
-      />
-      <UserInput 
-        label='Password' 
-        value={password} 
-        secureTextEntry={true} 
-        onChangeText={text=> setpassword(text)}
-      />
-      <UserInput label='Password confirmation' value={password2} secureTextEntry={true} onChangeText={text=> setpassword2(text)}/>
+        <UserInput 
+          label='Email' 
+          value={email} 
+          textContentType='emailAddress'
+          keyboardType='email-address'
+          autoCapitalize='none'
+          onChangeText={text => setEmail(text)}
+        />
+        <UserInput 
+          label='Password' 
+          value={password} 
+          secureTextEntry={true} 
+          onChangeText={text => setpassword(text)}
+        />
+        <UserInput 
+          label='Password confirmation' 
+          value={password2} 
+          secureTextEntry={true} 
+          onChangeText={text => setpassword2(text)}
+        />
         <ButtonsContainer>
           <LogInButton 
               icon='crown' 
               mode='contained'
-              onPress={() => {register({email, password})}}
+              onPress={() => {register({email, password}), comunicate[0] && (
+                navigation.navigate('Main')
+              )}}
           >Register</LogInButton>
           <LogInButton 
               icon='arrow-left-bold' 
               mode='contained'
               onPress={() => {navigation.navigate('Main')}}
           >Go Back</LogInButton>
-          {comunicate[1] && (
-            <Text variant='error'>{comunicate[1]}</Text>
+          {comunicate[2] && (
+            <Text variant='error'>{comunicate[2]}. Try again</Text>
           )}
-          {comunicate[0] && (
-            <Text variant='error'>{comunicate[0]}</Text>
-          )}
-        </ButtonsContainer>
+          </ButtonsContainer>
       </FormContainer>
     </Background>
   )

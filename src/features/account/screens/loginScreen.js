@@ -14,7 +14,7 @@ export const LoginScreen = ({ navigation }) => {
   // Text input states
   const [email, setEmail] = useState('');
   const [password, setpassword] = useState('');
-  const { onLogin, error } = useContext(AuthenticationContext)
+  const { onLogin, comunicate } = useContext(AuthenticationContext)
 
   return (
     <Background>
@@ -48,8 +48,8 @@ export const LoginScreen = ({ navigation }) => {
               mode='contained'
               onPress={() => {navigation.navigate('Main')}}
           >Go Back</LogInButton>
-          {error && (
-            <Text variant='error'>{error}</Text>
+          {comunicate[2] && (
+            <Text variant='error'>{comunicate[2]}</Text>
           )}
         </ButtonsContainer>
       </FormContainer>

@@ -14,7 +14,7 @@ export const AuthenticationContextProvider = ({ children }) => {
   const [errorCode, setErrorCode] = useState(null)
 
   const onLogin = (email, password) => {
-    console.log(email, password)
+    console.log(email)
     setIsLoading(true);
     //  Let's do it inside here before refatoring to authentication.service.js
     signInWithEmailAndPassword(authentication, email, password)
@@ -42,8 +42,8 @@ export const AuthenticationContextProvider = ({ children }) => {
       setUser(credentials.email)
       setMessage(`${credentials.email} Successfully created! You can now log in.`)
     }).catch((re) => {
-      setError(re)
-      console.log(re)
+      setError(re.message)
+      setErrorCode(re.code)
     });
   };
 
@@ -59,6 +59,9 @@ export const AuthenticationContextProvider = ({ children }) => {
         register,
         isAuthenticated,
         setIsAuthenticated,
+        setError,
+        setMessage,
+        setErrorCode,
         user,
         isLoading,
         onLogin,
