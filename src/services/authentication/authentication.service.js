@@ -6,15 +6,8 @@ import { authentication } from "./firebase.config"
 
 export function logInRequest(email, password) {
   console.log('Signing in...')
-  signInWithEmailAndPassword(authentication, email, password).then((userCredential) => {
-    // Signed in
-    const user = userCredential.user;
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-  });
+  console.log(`Inside logInRequest ${email}`)
+  signInWithEmailAndPassword(authentication, email, password);
 }
 
 export function register(credentials) {

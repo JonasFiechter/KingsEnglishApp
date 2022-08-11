@@ -1,7 +1,6 @@
 import React from "react";
 import { Text } from "../../../../../components/typography/textComponent.js";
 import { PostCard, PostCover, PostDescription, PostFooter, PostTitle } from './post-styles.js';
-import Ionicons from '@expo/vector-icons/Ionicons';
 
 export const Post = ({ post={} }) => {
     const {

@@ -7,8 +7,6 @@ import {
   Background,
   KingsLogo, 
 } from "./loginScreenStyles";
-import { onLogin, error } from "../../../services/authentication/authentication.service";
-import { Text } from "../../../components/typography/textComponent";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
 
 export const LoginScreen = ({ navigation }) => {
@@ -24,8 +22,7 @@ export const LoginScreen = ({ navigation }) => {
       <FormContainer>
         <UserInput 
           label='Email' 
-          value={email} 
-          textContentType='emailAddress'
+          value={email}
           keyboardType='email-address'
           autoCapitalize='none'
           onChangeText={text=> setEmail(text)}
@@ -51,15 +48,10 @@ export const LoginScreen = ({ navigation }) => {
               mode='contained'
               onPress={() => {navigation.navigate('Main')}}
           >Go Back</LogInButton>
-          <LogInButton 
-              icon='arrow-right-bold' 
-              mode='contained'
-              onPress={() => {navigation.navigate('TempKings')}}
-          >TempKings</LogInButton>
         </ButtonsContainer>
-        {error && (
+        {/* {error && (
           <Text variant='error'>{error}</Text>
-          )}
+          )} */}
       </FormContainer>
     </Background>
   );
