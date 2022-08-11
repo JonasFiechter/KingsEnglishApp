@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Text } from "../../../components/typography/textComponent";
 import { useNavigation } from "@react-navigation/native";
 import { Button } from "react-native";
 import { View } from "react-native";
+import { AuthenticationContext } from "../../../services/authentication/authentication.context";
 
-function LogOutButton({ navigation=useNavigation }) {
+
+function LogOutButton() {
+    const {setIsAuthenticated} = useContext(AuthenticationContext)
     return (
         <Button 
             title="Logout"
-            onPress={() => { navigation.navigate('Login')} }
+            onPress={() => { setIsAuthenticated(false) } }
         />
     )
 }

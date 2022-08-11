@@ -7,10 +7,10 @@ import {
   Background,
   KingsLogo, 
 } from "./loginScreenStyles";
+import { Text } from "../../../components/typography/textComponent";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
 
 export const LoginScreen = ({ navigation }) => {
-  const [isSignedIn, setIsSignedIn] = useState(false)
   // Text input states
   const [email, setEmail] = useState('');
   const [password, setpassword] = useState('');
@@ -48,10 +48,10 @@ export const LoginScreen = ({ navigation }) => {
               mode='contained'
               onPress={() => {navigation.navigate('Main')}}
           >Go Back</LogInButton>
+          {error && (
+            <Text variant='error'>{error}</Text>
+          )}
         </ButtonsContainer>
-        {/* {error && (
-          <Text variant='error'>{error}</Text>
-          )} */}
       </FormContainer>
     </Background>
   );
