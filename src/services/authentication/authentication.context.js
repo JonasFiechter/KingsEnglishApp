@@ -34,8 +34,13 @@ export const AuthenticationContextProvider = ({ children }) => {
       setIsLoading(false)
     });
   };
-
+  //  Need to check if this update is working!
   const register = (credentials) => {
+    if (credentials.password !== credentials.password2) {
+      setError("Error: Passwords do not match");
+      return;
+    }
+
     createUserWithEmailAndPassword(authentication, credentials.email, credentials.password)
     .then((re) => {
       console.log(`REGISTERING... ${credentials.email} ${re}`)
