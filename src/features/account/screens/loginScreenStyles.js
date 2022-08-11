@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 import { TextInput } from "react-native-paper";
 import { Button } from "react-native-paper";
-import { colors } from "../../../infraestructure/theme/colors";
+import { colors } from "../../../infrastructure/theme/colors";
 
 export const LogInButton = styled(Button).attrs({
   color: colors.brand.primary
