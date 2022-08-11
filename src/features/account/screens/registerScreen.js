@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { register } from "../../../services/authentication/authentication.service";
+import React, { useContext, useState } from "react";
+import { Text } from "../../../components/typography/textComponent";
+import { AuthenticationContext } from "../../../services/authentication/authentication.context";
 import { // This imports are the same from login screen so there is no need to create a style file
     FormContainer, 
     ButtonsContainer, 
@@ -10,11 +11,12 @@ import { // This imports are the same from login screen so there is no need to c
   } from "./loginScreenStyles";
 
 export function RegisterScreen({ navigation }) {
-  const [isSignedIn, setIsSignedIn] = useState(false)
   // Text input states
   const [email, setEmail] = useState('');
   const [password, setpassword] = useState('');
   const [password2, setpassword2] = useState('');
+  const { register, comunicate } = useContext(AuthenticationContext)
+  console.log(comunicate)
   return (
       <Background>
       <KingsLogo></KingsLogo>
@@ -45,6 +47,12 @@ export function RegisterScreen({ navigation }) {
               mode='contained'
               onPress={() => {navigation.navigate('Main')}}
           >Go Back</LogInButton>
+          {comunicate[1] && (
+            <Text variant='error'>{comunicate[1]}</Text>
+          )}
+          {comunicate[0] && (
+            <Text variant='error'>{comunicate[0]}</Text>
+          )}
         </ButtonsContainer>
       </FormContainer>
     </Background>
