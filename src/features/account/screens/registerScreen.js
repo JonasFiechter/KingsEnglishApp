@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import { Alert } from "react-native";
 import { Text } from "../../../components/typography/textComponent";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
 import { // This imports are the same from login screen so there is no need to create a style file
