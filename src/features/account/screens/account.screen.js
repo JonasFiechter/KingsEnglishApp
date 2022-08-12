@@ -4,7 +4,7 @@ import { KingsLogo, Background, ButtonsContainer, AuthButton, VersionLabel } fro
 import { Text } from "../../../components/typography/textComponent";
 
 export function AccountScreen({ navigation }) {
-    const { comunicate, setErrorCode, setMessage } = useContext(AuthenticationContext)
+    const { comunicate, setErrorCode, setMessage, setError } = useContext(AuthenticationContext)
 
     return (
         <Background>
@@ -13,13 +13,19 @@ export function AccountScreen({ navigation }) {
                 <AuthButton 
                     icon='sword' 
                     mode='contained'
-                    onPress={() => {navigation.navigate('Login')}}
+                    onPress={() => {
+                        navigation.navigate('Login'),
+                        setError(null),
+                        setErrorCode(null),
+                        setMessage(null)
+                    }}
                 >LogIn</AuthButton>
                 <AuthButton
                     icon='shield' 
                     mode='contained'
                     onPress={() => {
                         navigation.navigate('Register'), 
+                        setError(null),
                         setErrorCode(null),
                         setMessage(null)
                     }}

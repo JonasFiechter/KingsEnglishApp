@@ -47,18 +47,20 @@ export function RegisterScreen({ navigation }) {
           <LogInButton 
               icon='crown' 
               mode='contained'
-              onPress={() => {register({email, password, password2}), comunicate[0] && (
-                navigation.navigate('Main')
-              )}}
+              onPress={() => {
+                register({email, password, password2})}}
           >Register</LogInButton>
           <LogInButton 
               icon='arrow-left-bold' 
               mode='contained'
               onPress={() => {navigation.navigate('Main')}}
           >Go Back</LogInButton>
-          {comunicate[2] && (
-            <Text variant='error'>{comunicate[2]}. Try again</Text>
+          {comunicate[1] && (
+            <Text variant='error'>{comunicate[1]}. Try again</Text>
           )}
+          {
+            comunicate[0] && navigation.navigate('Main')
+          }
           </ButtonsContainer>
       </FormContainer>
     </Background>
