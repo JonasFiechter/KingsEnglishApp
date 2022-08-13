@@ -14,23 +14,18 @@ export const AuthenticationContextProvider = ({ children }) => {
   const [errorCode, setErrorCode] = useState(null)
 
   const onLogin = (email, password) => {
-    console.log(email)
     setIsLoading(true);
     //  Let's do it inside here before refatoring to authentication.service.js
     signInWithEmailAndPassword(authentication, email, password)
     .then((userCredential) => {
       // Signed in
-      const entry_user = userCredential.user;
-      console.log(user, entry_user)
-      setUser(entry_user)
+      setUser(userCredential.user)
       setIsAuthenticated(true)
       // ...
     })
     .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      setError(errorMessage)
-      setMessage(errorMessage)
+      setError(error.message)
+      setErrorCode(error.code)
       setIsLoading(false)
     });
   };
@@ -42,13 +37,12 @@ export const AuthenticationContextProvider = ({ children }) => {
     }
 
     createUserWithEmailAndPassword(authentication, credentials.email, credentials.password)
-    .then((re) => {
-      console.log(`REGISTERING... ${credentials.email} ${re}`)
+    .then((userCredential) => {
       setUser(credentials.email)
       setMessage(`${credentials.email} Successfully created! You can now log in.`)
-    }).catch((re) => {
-      setError(re.message)
-      setErrorCode(re.code)
+    }).catch((error) => {
+      setError(error.message)
+      setErrorCode(error.code)
     });
   };
 
