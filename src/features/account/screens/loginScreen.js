@@ -15,7 +15,6 @@ export const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setpassword] = useState('');
   const { onLogin, comunicate } = useContext(AuthenticationContext)
-  console.log(comunicate)
 
   return (
     <Background>

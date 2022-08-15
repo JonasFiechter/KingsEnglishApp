@@ -16,8 +16,7 @@ export function RegisterScreen({ navigation }) {
   const [password, setpassword] = useState('');
   const [password2, setpassword2] = useState('');
   const { register, comunicate } = useContext(AuthenticationContext)
-  console.log(comunicate)
-
+  
   return (
     <Background>
       <KingsLogo></KingsLogo>
