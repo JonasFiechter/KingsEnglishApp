@@ -4,7 +4,7 @@ import { KingsLogo, Background, ButtonsContainer, AuthButton, VersionLabel } fro
 import { Text } from "../../../components/typography/textComponent";
 
 export function AccountScreen({ navigation }) {
-    const { comunicate, setErrorCode, setMessage, setError } = useContext(AuthenticationContext)
+    const { comunicate, setErrorCode, setMessage, setError, setIsAuthenticated } = useContext(AuthenticationContext)
 
     return (
         <Background>
@@ -30,6 +30,16 @@ export function AccountScreen({ navigation }) {
                         setMessage(null)
                     }}
                 >Register</AuthButton>
+                <AuthButton
+                    icon='arrow-right-bold' 
+                    mode='contained'
+                    onPress={() => {
+                        setIsAuthenticated(true), 
+                        setError(null),
+                        setErrorCode(null),
+                        setMessage(null)
+                    }}
+                >{'Dev access </>'}</AuthButton>
                 {comunicate[0] && (
                     <Text variant='success'>{comunicate[0]}</Text>
                 )}
