@@ -2,7 +2,7 @@ import React from "react";
 import { Text } from "../../../../../components/typography/textComponent.js";
 import { PostCard, PostCover, PostDescription, PostFooter, PostTitle } from './post-styles.js';
 
-export const Post = ({ post={} }) => {
+export const Post = ({ post }) => {
 
     return (
         <PostCard>

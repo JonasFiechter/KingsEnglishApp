@@ -9,17 +9,18 @@ import { PostsContext } from "../../../services/posts/posts.context.js";
 
 //  The post screen and navigation functionality will be integrated soon.
 export const HomeFeed = ({ navigation }) => {
-    const { posts } = useContext(PostsContext)
+    const test = useContext(PostsContext)
+    console.log(test)
 
     return (
         <SafeArea>
             <FeedScreen>
                 <Body>
-                    <PostList
+                    {/* <PostList
                         data={posts}
                         renderItem={({item}) => <Post post={item}/>}
                         keyExtractor={(item) => {item.title}}
-                    />
+                    /> */}
                 </Body>
             </FeedScreen>
         </SafeArea>

@@ -6,6 +6,7 @@ import { useFonts as useLato, Lato_400Regular } from '@expo-google-fonts/lato';
 import 'react-native-gesture-handler';
 import { AuthenticationContextProvider } from "./src/services/authentication/authentication.context";
 import { Navigation } from './src/infrastructure/navigation/index';
+import { PostsContextProvider } from './src/services/posts/posts.context';
 
 
 export default function App() {
@@ -25,7 +26,9 @@ export default function App() {
 	return (
 		<ThemeProvider theme={theme}>
 			<AuthenticationContextProvider>
-				<Navigation></Navigation>
+				<PostsContextProvider>
+					<Navigation></Navigation>
+				</PostsContextProvider>
 			</AuthenticationContextProvider>
 		</ThemeProvider>
 	)

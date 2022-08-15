@@ -30,7 +30,7 @@ export function AccountScreen({ navigation }) {
                         setMessage(null)
                     }}
                 >Register</AuthButton>
-                <AuthButton
+                <AuthButton // ONLY WHILE IN DEVELOPMENT !!!
                     icon='arrow-right-bold' 
                     mode='contained'
                     onPress={() => {
