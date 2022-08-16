@@ -13,7 +13,7 @@ export const PostCover = styled(Card.Cover)`
 
 export const PostTitle = styled.View`
     flex: 1;
-    padding-left: ${(props) => props.theme.space[2]}; 
+    padding: ${(props) => props.theme.space[2]}; 
 `;
 
 export const PostDescription = styled.View`

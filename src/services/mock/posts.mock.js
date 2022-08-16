@@ -11,7 +11,14 @@ const postsArray = [
         author: 'Favourite Custom Author',
         cover: ['https://images.pexels.com/photos/169647/pexels-photo-169647.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1']
     },
+    {
+        title: 'Third Title for U',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        author: 'Favourite Custom Author',
+        cover: ['https://images.pexels.com/photos/6929499/pexels-photo-6929499.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1']
+    },
 ]
 //https://images.pexels.com/photos/169647/pexels-photo-169647.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
+//https://images.pexels.com/photos/6929499/pexels-photo-6929499.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 
 export default postsArray
