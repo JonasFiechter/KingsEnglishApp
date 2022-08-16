@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { Post } from "../components/post/components/post.js";
 import { SafeArea } from "../../../components/safeArea/SafeArea.js";
 import { 
     Body, FeedScreen, HeadSection, PostList
@@ -9,18 +8,19 @@ import { PostsContext } from "../../../services/posts/posts.context.js";
 
 //  The post screen and navigation functionality will be integrated soon.
 export const HomeFeed = ({ navigation }) => {
-    const test = useContext(PostsContext)
-    console.log(test)
+    const { posts, update } = useContext(PostsContext)
+
+    console.log(posts)
 
     return (
         <SafeArea>
             <FeedScreen>
                 <Body>
-                    {/* <PostList
+                    <PostList
                         data={posts}
                         renderItem={({item}) => <Post post={item}/>}
                         keyExtractor={(item) => {item.title}}
-                    /> */}
+                    />
                 </Body>
             </FeedScreen>
         </SafeArea>

@@ -1,8 +1,8 @@
-import posts from '../mock/posts.mock';
+import postsArray from '../mock/posts.mock.js';
 
 export function postsRequest() {
     return new Promise((resolve, reject) => {
-        const mock = posts
+        const mock = postsArray
         if (!mock) {
             reject('Not found!')
         }
