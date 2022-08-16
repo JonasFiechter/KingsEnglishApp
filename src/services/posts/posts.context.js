@@ -8,29 +8,29 @@ export const PostsContextProvider = ({ children }) => {
     const [isLoading, setIsLoading] = useState(false);
     const [update, setUpdate] = useState(false)
 
-    const retrievePosts = () => {
+    function retrievePosts() {
+        console.log('inside retrieve')
         setIsLoading(true);
         setPosts([]);
 
         setTimeout(() => {
             postsRequest()
-            .then((results) => {
-                setIsLoading(false)
-                setPosts(results)
-            });
-        });
+                .then((results) => {
+                    setIsLoading(false)
+                    setPosts(results)
+                });
+        }, 2000);
     };
 
-    useEffect((update) => {
-        update && retrievePosts()
-    });
-
+    useEffect(() => {
+        retrievePosts()
+    }, []);
+  
     return (
         <PostsContext.Provider
             value={{
                 posts,
                 isLoading,
-                update,
                 setUpdate,
             }}
         >
