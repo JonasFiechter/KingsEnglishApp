@@ -1,27 +1,29 @@
 import React, { useContext, useState } from "react";
 import { Text } from "../../../components/typography/textComponent";
 import { useNavigation } from "@react-navigation/native";
-import { Button } from "react-native";
-import { View } from "react-native";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
+import { LogoutButton, DashboardView, Content, ButtonsContainer } from "./dashboardScreenStyles.js"
 
 //  Need to integrate an confirmation message before log out!
 
 function LogOutButton() {
     const {setIsAuthenticated} = useContext(AuthenticationContext)
     return (
-        <Button 
-            title="Logout"
-            onPress={() => { setIsAuthenticated(false) } }
-        />
-    )
-}
+        <LogoutButton
+            onPress={() => {setIsAuthenticated(false)}}
+        >Log out</LogoutButton>
+    );
+};
 
 export const DashboardScreen = ({ navigation }) => {
     return (
-        <View>
-            <Text variant="error">Dashboard Screen WORKING!!!</Text>
-            <LogOutButton navigation={navigation}/>
-        </View>
+        <DashboardView>
+            <Content>
+                <Text variant="error">Dashboard Screen WORKING!!!</Text>
+                <ButtonsContainer>
+                    <LogOutButton navigation={navigation}/>
+                </ButtonsContainer>
+            </Content>
+        </DashboardView>
     );
 };

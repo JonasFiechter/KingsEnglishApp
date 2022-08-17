@@ -38,7 +38,12 @@ export function KingsAppNavigator({ navigation }) {
 		<NavigationContainer independent={true}>
 			<Tab.Navigator screenOptions={createScreenOptions}>
 				<Tab.Screen name="Home" component={HomeFeed} options={{headerShown: false}}/>
-				<Tab.Screen name="Dashboard" component={DashboardScreen} navigation={navigation}/>
+				<Tab.Screen 
+					name="Dashboard" 
+					component={DashboardScreen} 
+					navigation={navigation}
+					options={{headerShown: false}}
+				/>
 				<Tab.Screen name="Schedule" component={ScheduleScreen}/>
 				<Tab.Screen name="Admin" component={AdminScreen}/>
 				<Tab.Screen name="Settings" component={SettingsScreen}/>
