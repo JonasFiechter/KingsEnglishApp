@@ -3,7 +3,15 @@ import { Alert, Button } from "react-native";
 import { Text } from "../../../components/typography/textComponent";
 import { useNavigation } from "@react-navigation/native";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
-import { LogoutButton, DashboardView, Content, ButtonsContainer } from "./dashboardScreenStyles.js"
+import { 
+    LogoutButton, 
+    DashboardView, 
+    Content, 
+    ButtonsContainer, 
+    UserInfo,
+    UserImage
+} from "./dashboardScreenStyles.js"
+import { SafeArea } from "../../../components/safeArea/SafeArea";
 
 //  Need to integrate an confirmation message before log out!
 
@@ -35,14 +43,20 @@ function LogOutButton() {
 };
 
 export const DashboardScreen = ({ navigation }) => {
+    const { user } = useContext(AuthenticationContext)
     return (
         <DashboardView>
-            <Content>
-                <Text variant="error">Dashboard Screen WORKING!!!</Text>
-                <ButtonsContainer>
-                    <LogOutButton navigation={navigation}/>
-                </ButtonsContainer>
-            </Content>
+            <SafeArea>
+                <Content>
+                    <UserInfo>
+                        <UserImage></UserImage>
+                        <Text variant="error">{user !== null ? user.email : 'DeveloperMode'}</Text>
+                    </UserInfo>
+                    <ButtonsContainer>
+                        <LogOutButton navigation={navigation}/>
+                    </ButtonsContainer>
+                </Content>
+            </SafeArea>
         </DashboardView>
     );
 };
