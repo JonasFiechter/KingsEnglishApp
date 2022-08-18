@@ -9,7 +9,8 @@ import {
     Content, 
     ButtonsContainer, 
     UserInfo,
-    UserImage
+    UserImage,
+    UserInfoContainer
 } from "./dashboardScreenStyles.js"
 import { SafeArea } from "../../../components/safeArea/SafeArea";
 
@@ -48,10 +49,12 @@ export const DashboardScreen = ({ navigation }) => {
         <DashboardView>
             <SafeArea>
                 <Content>
-                    <UserInfo>
+                    <UserInfoContainer>
                         <UserImage></UserImage>
-                        <Text variant="error">{user !== null ? user.email : 'DeveloperMode'}</Text>
-                    </UserInfo>
+                        <UserInfo>
+                            <Text variant="title">{user !== null ? user.email : 'DeveloperMode'}</Text>
+                        </UserInfo>
+                    </UserInfoContainer>
                     <ButtonsContainer>
                         <LogOutButton navigation={navigation}/>
                     </ButtonsContainer>

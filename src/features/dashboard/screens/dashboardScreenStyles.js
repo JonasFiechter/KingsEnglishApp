@@ -15,7 +15,7 @@ export const Content = styled.View`
     width: 100%;
 `;
 
-export const UserInfo = styled.View`
+export const UserInfoContainer = styled.View`
     flex: 1;
     flex-direction: row;
     width: 100%;
@@ -23,11 +23,18 @@ export const UserInfo = styled.View`
 `;
 
 export const UserImage = styled.View`
-    flex: 0.5;
+    margin: 3%;
     background-color: yellow;
-    width: 100%;
-    height: 100%;
-    position: relative;
+    width: 120px;
+    height: 120px;
+`;
+
+export const UserInfo = styled.View`
+    flex: 1;
+    margin-top: 3%;
+    margin-right: 3%;
+    margin-bottom: 3%;
+    background-color: green;
 `;
 
 export const ButtonsContainer = styled.View`
