@@ -52,7 +52,9 @@ export const DashboardScreen = ({ navigation }) => {
                     <UserInfoContainer>
                         <UserImage></UserImage>
                         <UserInfo>
-                            <Text variant="title">{user !== null ? user.email : 'DeveloperMode'}</Text>
+                            <Text variant="title">
+                                {user !== null ? user.email : 'DeveloperMode'}
+                            </Text>
                         </UserInfo>
                     </UserInfoContainer>
                     <ButtonsContainer>
