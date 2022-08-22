@@ -47,7 +47,15 @@ export const ButtonsContainer = styled.View`
 
 export const LogoutButton = styled(Button).attrs({
     color: colors.bg.primary
-})`
+})` 
+    margin-top: 5px;
+    background-color: ${(props) => props.theme.colors.brand.primary};
+    width: 60%;
+`;
+
+export const UpdateProfileButton = styled(Button).attrs({
+    color: colors.bg.primary
+})` 
     background-color: ${(props) => props.theme.colors.brand.primary};
     width: 60%;
 `;

@@ -4,7 +4,13 @@ import { KingsLogo, Background, ButtonsContainer, AuthButton, VersionLabel } fro
 import { Text } from "../../../components/typography/textComponent";
 
 export function AccountScreen({ navigation }) {
-    const { comunicate, setErrorCode, setMessage, setError, setIsAuthenticated } = useContext(AuthenticationContext)
+    const { 
+        comunicate, 
+        setErrorCode, 
+        setMessage, 
+        setError, 
+        setIsAuthenticated 
+    } = useContext(AuthenticationContext)
 
     return (
         <Background>

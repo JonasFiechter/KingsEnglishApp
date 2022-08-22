@@ -6,7 +6,7 @@ export const AdminScreen = () => {
     return (
         <View>
             <Text variant='error'>Admin Screen WORKING!!!</Text>
-            <Text variant='error'>{ name }</Text>
+            <Text variant='error'></Text>
         </View>
     );
 };

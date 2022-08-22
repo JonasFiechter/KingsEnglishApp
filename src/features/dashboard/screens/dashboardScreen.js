@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Alert, Button } from "react-native";
+import { Alert } from "react-native";
 import { Text } from "../../../components/typography/textComponent";
 import { useNavigation } from "@react-navigation/native";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
@@ -10,7 +10,8 @@ import {
     ButtonsContainer, 
     UserInfo,
     UserImage,
-    UserInfoContainer
+    UserInfoContainer,
+    UpdateProfileButton
 } from "./dashboardScreenStyles.js"
 import { SafeArea } from "../../../components/safeArea/SafeArea";
 
@@ -52,12 +53,14 @@ export const DashboardScreen = ({ navigation }) => {
                     <UserInfoContainer>
                         <UserImage></UserImage>
                         <UserInfo>
-                            <Text variant="title">
-                                {user !== null ? user.email : 'DeveloperMode'}
+                            <Text variant="title">{user || 'DeveloperMode Name'}</Text>
+                            <Text variant="body">
+                                {user !== null ? user.email : 'DeveloperMode Email'}
                             </Text>
                         </UserInfo>
                     </UserInfoContainer>
                     <ButtonsContainer>
+                        <UpdateProfileButton>Edit profile</UpdateProfileButton>
                         <LogOutButton navigation={navigation}/>
                     </ButtonsContainer>
                 </Content>
